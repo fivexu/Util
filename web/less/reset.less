@@ -1,0 +1,168 @@
+/** less 重置window css属性
+* author: fivexu
+* date:2019/11/25
+*/
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p,
+input,
+option,
+textarea,
+dl,
+dd,
+dt,
+table,
+tr,
+th,
+td,
+thead,
+tbody {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  box-sizing: border-box !important;
+  background-color: transparent !important;
+  color: #373737;
+  font-size: 100px;
+  font-family: "PingFang SC Medium";
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transform-origin: center center;
+  position: relative;
+}
+
+html {
+  background-color: transparent !important;
+}
+
+body {
+  font-size: 14px;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+input,
+table,
+tr,
+th,
+td,
+thead,
+tbody {
+  border: none;
+  box-sizing: border-box;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+i,
+em {
+  font-style: normal;
+}
+
+textarea {
+  border: none;
+  resize: none;
+  outline: none;
+  &::-webkit-input-placeholder {
+    color: #abb4c3;
+  }
+}
+
+.float_l {
+  float: left;
+}
+
+.float_r {
+  float: right;
+}
+
+.tal {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none;
+}
+
+.hides {
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  overflow: hidden;
+  font-size: 0;
+  height: 0;
+  clear: both;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input {
+  outline: none;
+  &::-webkit-input-placeholder {
+    color: #abb4c3;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: transparent;
+  border-radius: 10px;
+  z-index: 999;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: #fff;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d9dee6;
+  border-radius: 10px;
+}
