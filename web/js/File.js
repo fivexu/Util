@@ -3,23 +3,23 @@
  * date: 2019/11/25
  */
 
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 const pathJoin = url => {
   // __static electron 专用
   return path.join(__static, url);
 };
 
-/* 写入文件
- * url 创建或写入文件地址
- * data 写人的内容 此项目多用于json  默认会转为json 字符串
- * isObject 写人非json时为false
+/** 写入文件
+ * @param {String} url 创建或写入文件地址
+ * @param {Any} data 写人的内容 此项目多用于json  默认会转为json 字符串
+ * @param {Boolean} isObject 写人非json时为false
  * */
 export const writeFile = (url, data, isObject = true) => {
   return new Promise((resolve, reject) => {
     data = isObject ? JSON.stringify(data) : data;
-    fs.writeFile(pathJoin(url), data, 'utf8', err => {
+    fs.writeFile(pathJoin(url), data, "utf8", err => {
       if (err) {
         reject(err);
         throw err;
@@ -37,7 +37,7 @@ export const writeFile = (url, data, isObject = true) => {
 export const readFileSync = (url, isObject = true, isUrl = false) => {
   return new Promise((resolve, reject) => {
     try {
-      let data = fs.readFileSync(isUrl ? url : pathJoin(url), 'utf-8');
+      let data = fs.readFileSync(isUrl ? url : pathJoin(url), "utf-8");
       data = isObject ? JSON.parse(data.toString()) : data;
       resolve(data);
     } catch (err) {
