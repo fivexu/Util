@@ -3,7 +3,7 @@
  * Date: 2019/11/22
  */
 
-import { ipcRenderer, shell } from 'electron';
+import { ipcRenderer, shell } from "electron";
 /** 系统拖动 配合main主进程 drag
  * 直接在vue中引入即可
  */
@@ -18,8 +18,8 @@ export const $drag = {
     $drag.initDrag = true;
     $drag.dragStartX = ev.clientX;
     $drag.dragStartY = ev.clientY;
-    document.addEventListener('mousemove', $drag.mouseMove);
-    document.addEventListener('mouseup', $drag.mouseUp);
+    document.addEventListener("mousemove", $drag.mouseMove);
+    document.addEventListener("mouseup", $drag.mouseUp);
   },
   mouseMove: ev => {
     ev = ev || event;
@@ -28,7 +28,7 @@ export const $drag = {
     if (!$drag.initDrag) return;
     let disX = ev.clientX - $drag.dragStartX;
     let disY = ev.clientY - $drag.dragStartY;
-    ipcRenderer.send('drag', { disX, disY });
+    ipcRenderer.send("drag", { disX, disY });
   },
   mouseUp: ev => {
     ev = ev || event;
@@ -37,13 +37,13 @@ export const $drag = {
     $drag.initDrag = false;
     $drag.dragStartX = 0;
     $drag.dragStartY = 0;
-    document.removeEventListener('mousemove', $drag.mouseMove, true);
-    document.removeEventListener('mouseup', $drag.mouseUp, true);
+    document.removeEventListener("mousemove", $drag.mouseMove, true);
+    document.removeEventListener("mouseup", $drag.mouseUp, true);
   }
 };
 
-/* 系统打开 本地文件
- * fileUrl 本地文件的绝对路径
+/** 系统打开 本地文件
+ * @param {String} fileUrl 本地文件的绝对路径
  * */
 export const $openFile = fileUrl => {
   return new Promise((resolve, reject) => {
@@ -56,8 +56,8 @@ export const $openFile = fileUrl => {
   });
 };
 
-/* 系统打开 本地文件夹
- * fileUrl 本地文件夹的绝对路径
+/** 系统打开 本地文件夹
+ * @param {String} fileUrl 本地文件夹的绝对路径
  * */
 export const $openDir = fileUrl => {
   return new Promise((resolve, reject) => {
