@@ -221,7 +221,7 @@ export const prefixStyle = style => {
     }
     return false;
   })();
-  if (vendor === false) return false;
+  if (!vendor) return false;
   if (vendor === "standard") return style;
   return vendor + style.charAt(0).toUpperCase() + style.substr(1);
 };
