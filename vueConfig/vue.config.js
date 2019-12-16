@@ -32,10 +32,10 @@ const redirect = config => {
 module.exports = {
   publicPath: "./",
   outputDir: "dist",
-  lintOnSave: false,
+  lintOnSave: true,
   chainWebpack: config => {
     redirect(config);
-    minImage(config);
+    if (process.env.NODE_ENV === "production") minImage(config);
   },
   devServer: {
     open: true,
